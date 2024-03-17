@@ -25,6 +25,9 @@ function operate(first,operator,second){
             return first/second;
     }
 }
+var firstOperator;
+var secondOperator;
+var Operation;
 var probsum=operate(12,"/",0);
 var sum=add(12,14)
 var sub=substract(13,14)
