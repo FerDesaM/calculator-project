@@ -1,4 +1,10 @@
 
+// Variables;
+var firstOperator=0;
+var secondOperator=0;
+var Operation=["+","-","*","/","="];
+//
+
 function add(first,second){
     return first+second;
 }
@@ -11,7 +17,9 @@ function multiply(first,second){
 function divide(first,second){
     return first/second;
 }
-function operate(first,operator,second){
+
+
+function operate(firstoperator,operator,secondOperator){
     if(second===0&&operator==="/")
         return "ERROR";
     switch(operator){
@@ -25,9 +33,6 @@ function operate(first,operator,second){
             return first/second;
     }
 }
-var firstOperator;
-var secondOperator;
-var Operation;
 var probsum=operate(12,"/",0);
 var sum=add(12,14)
 var sub=substract(13,14)
