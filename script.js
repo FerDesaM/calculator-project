@@ -9,7 +9,7 @@ const multiplyButton = document.querySelector("#multip");
 const divideButton = document.querySelector("#division");
 const decimalButton = document.getElementById("decimal");
 let firstOperand = 0;
-let secondOperand = null; // Inicializado a null
+let secondOperand = null;
 let operator = null;
 let isNewNumber = true;
 let lastAction = false;
@@ -80,9 +80,9 @@ decimalButton.addEventListener("click", () => {
 
 operators.forEach(button => {
     button.addEventListener("click", () => {
-        if (operator === null) { // Verifica si hay un operador anterior
+        if (operator === null) { 
             firstOperand = parseFloat(display.textContent);
-        } else if (secondOperand === null) { // Si hay un operador, pero no un segundo operando
+        } else if (secondOperand === null) { 
             secondOperand = parseFloat(display.textContent);
             let result = operate(firstOperand, operator, secondOperand);
             updateDisplay(result);
@@ -126,3 +126,10 @@ function handleOperator(selectedOperator) {
     isNewNumber = true;
     lastAction = false;
 }
+//En una proxima actualizacion del codigo....
+document.addEventListener("keydown",(event)=>{
+    const key=event.key;
+    if(!isNaN(key)&&key!==" "){
+
+    }
+})
