@@ -9,7 +9,7 @@ const multiplyButton = document.querySelector("#multip");
 const divideButton = document.querySelector("#division");
 const decimalButton = document.getElementById("decimal");
 let firstOperand = 0;
-let secondOperand = null;
+let secondOperand = 0;
 let operator = null;
 let isNewNumber = true;
 let lastAction = false;
@@ -93,7 +93,7 @@ operators.forEach(button => {
     });
 });
 
-equalButton.addEventListener("click", () => {
+function resultOperator(){
     if (!isNewNumber || !lastAction) {
         secondOperand = parseFloat(display.textContent);
     }
@@ -102,15 +102,24 @@ equalButton.addEventListener("click", () => {
     firstOperand = result;
     isNewNumber = true;
     lastAction = true;
+}
+function rebootOperator(){
+    updateDisplay("0");
+    operator=null;
+    isNewNumber=true;
+    lastAction=false;
+    firstOperand=0;
+    secondOperand=0;
+    
+
+}
+
+equalButton.addEventListener("click", () => {
+    resultOperator();
 });
 
 rebootButton.addEventListener("click", () => {
-    lastAction=false;
-    updateDisplay("0");
-    firstOperand=0;
-    secondOperand=0;
-    operator=null;
-    isNewNumber=true;
+    rebootOperator();
 });
 
 function handleOperator(selectedOperator) {
@@ -126,10 +135,33 @@ function handleOperator(selectedOperator) {
     isNewNumber = true;
     lastAction = false;
 }
-//En una proxima actualizacion del codigo....
+
+//Controller of keys
+function concatdigit(digit){
+  if(isNewNumber){
+    display.textContent=digit;
+    isNewNumber=false;
+  } else{
+    display.textContent+=digit;
+  } 
+}
+
 document.addEventListener("keydown",(event)=>{
     const key=event.key;
     if(!isNaN(key)&&key!==" "){
-
+        concatdigit(key);
+    }else if(key==="."){
+        if(isNewNumber){
+            display.textContent="0.";
+            isNewNumber=false;
+        }else if(!display.textContent.includes(".")){
+            display.textContent+=".";
+        }
+    }else if(key==="+"||key==="-"||key==="*"||key==="/"){
+        handleOperator(key);
+    }else if(key==="Enter"){
+        resultOperator();
+    }else if(key==="Escape"){
+        rebootOperator();
     }
 })
