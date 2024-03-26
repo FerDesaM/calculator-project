@@ -7,6 +7,7 @@ body{
     flex-direction: column;
     align-content: center;
     align-items: center;
+    align-self: center;
 }
 .Cont-container{
     background-color: rgba(52, 60, 85, 0.856);
@@ -79,4 +80,9 @@ button:hover{
     border-radius: 1px;
     height: 100px;
     margin-bottom: -80px;
+}
+.footer{
+    color: azure;
+    background-color: rgb(155, 124, 124);
+    justify-content: center;
 }
