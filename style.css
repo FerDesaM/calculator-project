@@ -8,7 +8,16 @@ body{
     align-content: center;
     align-items: center;
 }
-
+.Cont-container{
+    background-color: rgba(52, 60, 85, 0.856);
+    width: 400px;
+    height: 700px;
+    border-radius: 4%;
+    padding: 2rem;
+    margin-bottom: 100px;
+    padding-bottom: auto ;
+    border: solid gray 10px;
+}
 
 .Keypad{
     display: flex;
@@ -21,13 +30,14 @@ body{
 
 }
 .Keypad #equal{
-    width: 184px;
+    width: 375px;
     background-color: rgb(190, 167, 32);
 }
 .Keypad #sub, #multip{
     width: 90px;
 }
 .Keypad #reboot{
+    width: 116px;
     background-color: rgb(77, 19, 19);
 }
 button{
@@ -38,6 +48,9 @@ button{
     margin: 2px;
     border-radius: 15px;
 }
+.button-row{
+    display: flex;
+}
 button:hover{
     background-color: rgb(94, 84, 84);
 }
@@ -46,4 +59,24 @@ button:hover{
 }
 #equal:hover{
     background-color: rgb(97, 97, 23);
+}
+#visual-display{
+    flex-grow: 1;
+    background-color: #ffff;
+    color: black;
+    text-align: right;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 0 2px;
+    font-size: 3rem;
+    
+}
+.display{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1px;
+    height: 100px;
+    margin-bottom: -80px;
 }

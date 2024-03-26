@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js"></script>
     <title>Calculator</title>
 </head>
 <body>
@@ -12,26 +12,38 @@
         <h1>Calculator<h1>
         <div class="Cont-container">
             <div class="display">
-
+                <div id="visual-display"></div>
             </div>
             <div class="Keypad">
-                <button id="button7">7</button>
-                <button id="button8">8</button>
-                <button id="button9">9</button>
-                <button id="add">+</button>
-                <button id="button5">5</button>
-                <button id="button6">6</button>
-                <button id="button7">7</button>
-                <button id="sub">-</button>
-                <button id="button1">1</button>
-                <button id="button2">2</button>
-                <button id="button3">3</button>
-        
-                <button id="multip">*</button>
-                <button id="equal">=</button>
-                <button id="reboot">C</button>
-                <button id="division/">/</button>
+                <div class="button-row">
+                    <button class="button number">7</button>
+                    <button class="button number">8</button>
+                    <button class="button number">9</button>
+                    <button class="button operator" id="add">+</button>    
+                </div>
+                <div class="button-row">
+                    <button class="button number">4</button>
+                    <button class="button number">5</button>
+                    <button class="button number">6</button>
+                    <button class="button operator" id="sub">-</button>
+                </div>
+                <div class="button-row">
+                    <button class="button number">1</button>
+                    <button class="button number">2</button>
+                    <button class="button number">3</button>
+                    <button class="button operator" id="multip">*</button>
+                </div>
+                <div class="button-row">
+                    <button class="button" id="reboot">C</button>
+                    <button class="button" id="decimal">.</button>
+                    <button class="button number">0</button>
+                    <button class="button operator" id="division">/</button>
+                </div>
+                <button class="button" id="equal">=</button>
             </div>
+        </div>
+        <div class="footer">
+            Property:Fernando
         </div>
     </div>
 </body>
